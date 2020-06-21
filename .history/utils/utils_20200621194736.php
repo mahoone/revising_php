@@ -2,6 +2,10 @@
 
 session_start();
 
+if(!isset($_SESSION['current_user'])) {
+    $_SESSION['current_user'] = 0;
+}
+
 // Count user visits
 function visit_counter() {
     if(!isset($_SESSION['counter'])) {

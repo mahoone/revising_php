@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 // Count user visits
 function visit_counter() {
     if(!isset($_SESSION['counter'])) {

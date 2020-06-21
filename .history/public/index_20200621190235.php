@@ -15,7 +15,7 @@ include('../modules/nav.php');
 
 <!-- Login form -->
 <div class="container">
-  <form action="categories.php" method="post">
+  <form action="" method="post">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

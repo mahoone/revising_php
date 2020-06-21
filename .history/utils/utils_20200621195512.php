@@ -2,6 +2,16 @@
 
 session_start();
 
+// Check if current user's ID is cached
+if(!isset($_SESSION['current_user'])) {
+    $_SESSION['current_user'] = 0;
+}
+
+// If user is already logged in then show message
+if($_SESSION['current_user'] > 0) {
+    echo 'Hey there';
+}
+
 // Count user visits
 function visit_counter() {
     if(!isset($_SESSION['counter'])) {
