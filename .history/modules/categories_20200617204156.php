@@ -1,2 +1,0 @@
-<?php
-dumb($_SESSION);

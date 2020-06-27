@@ -1,5 +1,0 @@
-<?php
-
-$values = ($_SERVER);
-
-

@@ -1,3 +1,0 @@
-<?php
-require('./dispach.php');
-

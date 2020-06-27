@@ -6,3 +6,4 @@ function dumb($dumb_value) {
     echo '<pre>';
 }
 
+dumb($_SESSION);
