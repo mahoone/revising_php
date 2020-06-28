@@ -26,6 +26,9 @@
     require ('./utils/Utils.php');
     require ('./utils/Stats.php');
 
+    // Visitor - Visit Counter and Cookies
+    $user_data = new Visitor;
+
     // User -> UserAddons
     $test_user = new UserAddons('Kamil', '35');
     $test_user->setUserPassword('password');
@@ -36,10 +39,8 @@
     ?>
 </div>
 
-<!-- Visitor - Visit Counter and Cookies -->
 <div class="alert alert-primary" role="alert">
   <?php
-    $user_data = new Visitor;
    echo 'Last visit: '.$user_data->setUserCookies();;
   ?>
 </div>

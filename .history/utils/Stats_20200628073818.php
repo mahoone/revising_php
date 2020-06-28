@@ -70,25 +70,12 @@ class Visitor {
     }
 }
 
-// Example of an Abstract Class and extending Class
+// Example of Abstract Class
 
-abstract class Posts {
+abstract class Visitors {
 
-    public abstract function getPostId();
+    public abstract function visitor_id();
 
-}
-
-class PublicPosts extends Posts {
-
-    protected $post_id;
-
-    public function __construct($post_id) {
-        $this->post_id = $post_id;
-    }
-
-    public function getPostId() {
-        return $this->post_id;
-    }
 }
 
 

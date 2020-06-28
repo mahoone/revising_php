@@ -36,9 +36,9 @@
     ?>
 </div>
 
-<!-- Visitor - Visit Counter and Cookies -->
 <div class="alert alert-primary" role="alert">
   <?php
+    // Visitor - Visit Counter and Cookies
     $user_data = new Visitor;
    echo 'Last visit: '.$user_data->setUserCookies();;
   ?>

@@ -89,6 +89,7 @@ class PublicPosts extends Posts {
     public function getPostId() {
         return $this->post_id;
     }
+
 }
 
 

@@ -91,6 +91,9 @@ class PublicPosts extends Posts {
     }
 }
 
+$post1 = new PublicPosts('1');
+echo $post1->getPostId();
+
 
 
 

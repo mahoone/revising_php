@@ -91,6 +91,8 @@ class PublicPosts extends Posts {
     }
 }
 
+$post1 = new Posts;
+
 
 
 

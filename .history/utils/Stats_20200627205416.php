@@ -6,13 +6,9 @@ class User {
     protected $user_name;
     protected $user_password;
 
-    public function __construct($name) {
+    public function setUserName($name) {
         $this->user_name = $name;
     }
-
-    // public function setUserName($name) {
-    //     $this->user_name = $name;
-    // }
 
     public function setUserPassword($password) {
         $this->user_password = $password;
@@ -28,21 +24,9 @@ class User {
 }
 
 // Elements
-class UserAddons extends User {
-
-    protected $user_age;
-
-    public function __construct($name = null, $userAge) { 
-        parent::__construct($name);
-        $this->user_age = $userAge;
-    }
-
-    public function getUserAge() {
-        return $this->user_age;
-    }
-
+class FormElements extends User {
     public function showUserData() {
-        echo '<p>Username:</p>'.$this->getUserName().'<p>Age:</p>'.$this->getUserAge();
+        echo '<p>Username:</p>'.$this->getUserName().'<p>Password:</p>'.$this->getUserPassword();
     }
 }
 
@@ -64,30 +48,13 @@ class Visitor {
                return 'You are a quest'.'<br/>';
            }
            else {
-               return date('d.m.Y, H:i', $_COOKIE['visit_no']);
+               return '<p>'.'You visited this page on '.date('d.m.Y, H:i', $_COOKIE['visit_no']).'</p>'.'<br/>';
            }
         }
     }
-}
 
-// Example of an Abstract Class and extending Class
-
-abstract class Posts {
-
-    public abstract function getPostId();
-
-}
-
-class PublicPosts extends Posts {
-
-    protected $post_id;
-
-    public function __construct($post_id) {
-        $this->post_id = $post_id;
-    }
-
-    public function getPostId() {
-        return $this->post_id;
+    public function displayVisitorData() {
+        echo 'Hey! It is your '.$_SESSION['last_visit'].' visit!';
     }
 }
 

@@ -6,7 +6,7 @@ class User {
     protected $user_name;
     protected $user_password;
 
-    public function __construct($name) {
+    public function __constructor($name) {
         $this->user_name = $name;
     }
 
@@ -28,12 +28,12 @@ class User {
 }
 
 // Elements
-class UserAddons extends User {
+class FormElements extends User {
 
     protected $user_age;
 
-    public function __construct($name = null, $userAge) { 
-        parent::__construct($name);
+    public function __construct($name, $userAge) { 
+        parent::__constructor($name);
         $this->user_age = $userAge;
     }
 
@@ -42,7 +42,7 @@ class UserAddons extends User {
     }
 
     public function showUserData() {
-        echo '<p>Username:</p>'.$this->getUserName().'<p>Age:</p>'.$this->getUserAge();
+        echo '<p>Username:</p>'.$this->getUserName().'<p>Password:</p>'.$this->getUserPassword();
     }
 }
 
@@ -67,27 +67,6 @@ class Visitor {
                return date('d.m.Y, H:i', $_COOKIE['visit_no']);
            }
         }
-    }
-}
-
-// Example of an Abstract Class and extending Class
-
-abstract class Posts {
-
-    public abstract function getPostId();
-
-}
-
-class PublicPosts extends Posts {
-
-    protected $post_id;
-
-    public function __construct($post_id) {
-        $this->post_id = $post_id;
-    }
-
-    public function getPostId() {
-        return $this->post_id;
     }
 }
 

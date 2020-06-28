@@ -19,36 +19,25 @@
   </head>
   <body>
   
-<div class="container">
     <?php
     session_start();
 
     require ('./utils/Utils.php');
     require ('./utils/Stats.php');
 
-    // User -> UserAddons
-    $test_user = new UserAddons('Kamil', '35');
-    $test_user->setUserPassword('password');
-    echo $test_user->showUserData();
+    $user_data = array();
 
-    // dumb($_SESSION);
-    // dumb($_COOKIE);
-    ?>
-</div>
-
-<!-- Visitor - Visit Counter and Cookies -->
-<div class="alert alert-primary" role="alert">
-  <?php
     $user_data = new Visitor;
-   echo 'Last visit: '.$user_data->setUserCookies();;
-  ?>
-</div>
+    $user_data->visitCounter();
+    $user_data->setUserCookies();
 
-<div class="alert alert-primary" role="alert">
-  <?php
-   echo 'Visit counter: '.$user_data->visitCounter();
-  ?>
-</div>
+    $test_user = new FormElements;
+    $test_user->setUserName('kamil');
+    $test_user->setUserPassword('password');
+
+    dumb($_SESSION);
+    dumb($_COOKIE);
+    ?>
 
   </body>
   <script type="text/javascript" src="js/mdb.min.js"></script>

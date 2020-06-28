@@ -19,15 +19,21 @@
   </head>
   <body>
   
-<div class="container">
+  <div class="container">
     <?php
     session_start();
 
     require ('./utils/Utils.php');
     require ('./utils/Stats.php');
 
-    // User -> UserAddons
-    $test_user = new UserAddons('Kamil', '35');
+    // Visitor - Visit Counter and Cookies
+    $user_data = new Visitor;
+    
+    $user_data->setUserCookies();
+
+    // User
+    $test_user = new FormElements;
+    $test_user->setUserName('kamil');
     $test_user->setUserPassword('password');
     echo $test_user->showUserData();
 
@@ -36,17 +42,9 @@
     ?>
 </div>
 
-<!-- Visitor - Visit Counter and Cookies -->
 <div class="alert alert-primary" role="alert">
   <?php
-    $user_data = new Visitor;
-   echo 'Last visit: '.$user_data->setUserCookies();;
-  ?>
-</div>
-
-<div class="alert alert-primary" role="alert">
-  <?php
-   echo 'Visit counter: '.$user_data->visitCounter();
+    echo 'It is your '.$user_data->visitCounter().' visit!';
   ?>
 </div>
 

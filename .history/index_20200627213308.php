@@ -26,6 +26,8 @@
     require ('./utils/Utils.php');
     require ('./utils/Stats.php');
 
+    $somevar = new SomeClass;
+
     // User -> UserAddons
     $test_user = new UserAddons('Kamil', '35');
     $test_user->setUserPassword('password');
